@@ -557,7 +557,7 @@ class DrawItem implements PageLayoutViewDrawItemHookInterface, SingletonInterfac
                         'uid_pid'                    => $parentObject->id,
                         'returnUrl'                  => GeneralUtility::getIndpEnv('REQUEST_URI'),
                     ];
-                    $url = $this->uriBuilder->buildUriFromRoute('new_content_element', $urlParameters);
+                    $url = $this->uriBuilder->buildUriFromRoute('new_content_element_wizard', $urlParameters);
                 } else {
                     $urlParameters = [
                         'edit'      => [
@@ -586,7 +586,7 @@ class DrawItem implements PageLayoutViewDrawItemHookInterface, SingletonInterfac
 
         if ($colPos !== '' && $colPos !== null && $colPos < 32768 && $url) {
             $iconsArray = [
-                'new' => '<a href="' . htmlspecialchars($url) . '" title="' . $this->languageService->getLL('newContentElement') . '" class="btn btn-default btn-sm t3js-toggle-new-content-element-wizard">'
+                'new' => '<a href="#" data-url="' . htmlspecialchars($url) . '" title="' . $this->languageService->getLL('newContentElement') . '" data-title="' . $this->languageService->getLL('newContentElement') . '" class="btn btn-default btn-sm t3js-toggle-new-content-element-wizard">'
                     . $this->iconFactory->getIcon('actions-document-new', Icon::SIZE_SMALL) . ' ' . $this->languageService->getLL('content') . '</a>',
             ];
         }
@@ -656,7 +656,7 @@ class DrawItem implements PageLayoutViewDrawItemHookInterface, SingletonInterfac
                                 'uid_pid'                    => -$specificIds['uid'],
                                 'returnUrl'                  => GeneralUtility::getIndpEnv('REQUEST_URI'),
                             ];
-                            $url = $this->uriBuilder->buildUriFromRoute('new_content_element', $urlParameters);
+                            $url = $this->uriBuilder->buildUriFromRoute('new_content_element_wizard', $urlParameters);
                         } else {
                             $urlParameters = [
                                 'edit'      => [
@@ -679,8 +679,10 @@ class DrawItem implements PageLayoutViewDrawItemHookInterface, SingletonInterfac
                             $url = $this->uriBuilder->buildUriFromRoute('record_edit', $urlParameters);
                         }
                         $iconsArray = [
-                            'new' => '<a 
-                                href="' . htmlspecialchars($url) . '" 
+                            'new' => '<a
+                                href="#" 
+                                data-url="' . htmlspecialchars($url) . '" 
+                                data-title="' . $this->languageService->getLL('newContentElement') . '" 
                                 title="' . $this->languageService->getLL('newContentElement') . '" 
                                 class="btn btn-default btn-sm t3js-toggle-new-content-element-wizard">' .
                                 $this->iconFactory->getIcon('actions-document-new', Icon::SIZE_SMALL) . ' ' .
