@@ -17,6 +17,8 @@
  */
 define(['jquery', 'jquery-ui/droppable', 'TYPO3/CMS/Backend/LayoutModule/DragDrop'], function ($, Droppable, DragDrop) {
     'use strict';
+    
+    DragDrop = DragDrop.default;
 
     /**
      * @exports TYPO3/CMS/Gridelements/DragDrop
@@ -33,6 +35,15 @@ define(['jquery', 'jquery-ui/droppable', 'TYPO3/CMS/Backend/LayoutModule/DragDro
     DragDrop.types = {};
     DragDrop.ownDropZone = {};
     DragDrop.column = {};
+
+    DragDrop.contentIdentifier = '.t3js-page-ce';
+    DragDrop.dragHeaderIdentifier = '.t3js-page-ce-draghandle';
+    DragDrop.dropZoneIdentifier = '.t3js-page-ce-dropzone-available';
+    DragDrop.columnIdentifier = '.t3js-page-column';
+    DragDrop.validDropZoneClass = 'active';
+    DragDrop.dropPossibleHoverClass = 't3-page-ce-dropzone-possible';
+    DragDrop.addContentIdentifier = '.t3js-page-new-ce';
+    DragDrop.originalStyles = '';
 
     /**
      * initializes Drag+Drop for all content elements on the page
