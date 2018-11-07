@@ -23,10 +23,10 @@ define(['jquery', 'TYPO3/CMS/Backend/AjaxDataHandler', 'TYPO3/CMS/Backend/Storag
     };
 
 
-    AjaxDataHandler.identifier.allGridelementsToggle = '.t3js-toggle-gridelements-all';
-    AjaxDataHandler.identifier.gridelementToggle = '.t3js-toggle-gridelements-list';
-    AjaxDataHandler.identifier.allGridelementsColumnsToggle = '.t3js-toggle-gridelements-columns-all';
-    AjaxDataHandler.identifier.gridelementColumnToggle = '.t3js-toggle-gridelements-column';
+    var allGridelementsToggle = '.t3js-toggle-gridelements-all';
+    var gridelementToggle = '.t3js-toggle-gridelements-list';
+    var allGridelementsColumnsToggle = '.t3js-toggle-gridelements-columns-all';
+    var gridelementColumnToggle = '.t3js-toggle-gridelements-column';
 
     /**
      * initializes Drag+Drop for all content elements on the page
@@ -336,7 +336,7 @@ define(['jquery', 'TYPO3/CMS/Backend/AjaxDataHandler', 'TYPO3/CMS/Backend/Storag
      * activates the arrow icons to show/hide content previews within a certain grid column
      */
     OnReady.activateCollapseIcons = function () {
-        $(document).on('click', AjaxDataHandler.identifier.gridelementColumnToggle, function (evt) {
+        $(document).on('click', gridelementColumnToggle, function (evt) {
             evt.preventDefault();
 
             var $me = $(this),
@@ -396,7 +396,7 @@ define(['jquery', 'TYPO3/CMS/Backend/AjaxDataHandler', 'TYPO3/CMS/Backend/Storag
      */
     OnReady.activateAllGridExpander = function () {
         OnReady.activateGridExpander();
-        $(document).on('click', AjaxDataHandler.identifier.allGridelementsToggle, function (evt) {
+        $(document).on('click', allGridelementsToggle, function (evt) {
             evt.preventDefault();
 
             var $me = $(this),
@@ -435,7 +435,7 @@ define(['jquery', 'TYPO3/CMS/Backend/AjaxDataHandler', 'TYPO3/CMS/Backend/Storag
      * activates the toggle icons to open listings of nested grid container structure in the list module
      */
     OnReady.activateGridExpander = function () {
-        $(document).on('click', AjaxDataHandler.identifier.gridelementToggle, function (evt) {
+        $(document).on('click', gridelementToggle, function (evt) {
             evt.preventDefault();
 
             var $me = $(this),
