@@ -50,7 +50,7 @@ define(['jquery', 'TYPO3/CMS/Backend/AjaxDataHandler', 'TYPO3/CMS/Backend/Storag
         OnReady.setAllowedData();
         $('.icon-actions-document-paste-into').parent().remove();
         $('.t3-page-ce-wrapper-new-ce').each(function () {
-            if (!$(this).find('.icon-actions-document-new').length) {
+            if (!$(this).find('.t3js-toggle-new-content-element-wizard').length) {
                 return true;
             }
             $(this).addClass('btn-group btn-group-sm');

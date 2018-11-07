@@ -141,7 +141,7 @@ define(['jquery', 'jquery-ui/droppable', 'TYPO3/CMS/Backend/LayoutModule/DragDro
                     $(this).not(disabledDropZones).length ||
                     siblingsDropZones.length
                 ) &&
-                $(this).parent().find('.icon-actions-document-new').length
+                $(this).parent().find('.t3js-toggle-new-content-element-wizard').length
             ) {
                 $(this).addClass(DragDrop.validDropZoneClass);
             } else {
